@@ -43,8 +43,12 @@ public class World {
 				}
 			}
 		}
-		
+
 		tiles.add(new TestTile(manager, 50, 100));
+
+		for (Tile tile : tiles) {
+			manager.addGameObject(tile);
+		}
 
 		System.out.println(tiles.size() + " tiles have been created");
 	}
@@ -65,12 +69,6 @@ public class World {
 		}
 
 		return null;
-	}
-
-	public void renderTiles() {
-		for (Tile tile : tiles) {
-			tile.render();
-		}
 	}
 
 	public int getWorldWidth() {

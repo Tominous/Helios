@@ -8,9 +8,14 @@ import uk.davidmoyse.ascendearth.graphics.sprites.Sprite;
 public class StoneTile extends Tile {
 
 	public StoneTile(GameManager manager, int x, int y) {
-		super(manager, x, y, new Sprite(Color.GRAY));
+		super(manager, x, y);
 	}
 
+	@Override
+	protected Sprite initSprite() {
+		return new Sprite(Color.GRAY);
+	}
+	
 	@Override
 	public void update() {
 

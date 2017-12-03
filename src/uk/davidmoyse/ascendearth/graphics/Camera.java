@@ -5,7 +5,9 @@ import java.awt.event.KeyEvent;
 import uk.davidmoyse.ascendearth.Game;
 import uk.davidmoyse.ascendearth.GameManager;
 import uk.davidmoyse.ascendearth.GameObject;
+import uk.davidmoyse.ascendearth.world.Location;
 import uk.davidmoyse.ascendearth.world.World;
+import uk.davidmoyse.ascendearth.world.tiles.Tile;
 import uk.davidmoyse.ascendearth.world.util.Helper;
 
 public class Camera extends GameObject {
@@ -21,7 +23,7 @@ public class Camera extends GameObject {
 		this.display = display;
 
 		World world = manager.getGame().getWorld();
-		
+
 		int tempOffsetX = world.getPixels().length - width;
 		this.maxOffsetX = Helper.clamp(tempOffsetX, 0, tempOffsetX);
 		int tempOffsetY = world.getPixels()[0].length - height;
@@ -76,6 +78,17 @@ public class Camera extends GameObject {
 
 	public int getMaxOffsetY() {
 		return maxOffsetY;
+	}
+
+	public boolean isInView(GameObject object) {
+		Location location = object.getLocation();
+		int lbX = this.location.getX() - Tile.TILE_SIZE, ubX = this.location.getX() + Game.WIDTH + Tile.TILE_SIZE;
+		int lbY = this.location.getY() - Tile.TILE_SIZE, ubY = this.location.getY() + Game.HEIGHT + Tile.TILE_SIZE;
+
+		lbX = Helper.clamp(lbX, 0, lbX);
+		lbY = Helper.clamp(lbY, 0, lbY);
+
+		return !(location.getX() < lbX || location.getX() > ubX || location.getY() < lbY || location.getY() > ubY);
 	}
 
 }

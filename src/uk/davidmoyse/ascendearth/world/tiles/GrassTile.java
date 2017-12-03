@@ -9,10 +9,15 @@ import uk.davidmoyse.ascendearth.world.util.Helper;
 public class GrassTile extends Tile {
 
 	public GrassTile(GameManager manager, int x, int y) {
-		super(manager, x, y,
-				new Sprite(new Color(Helper.getRandomNumberBetween(11, 7), Helper.getRandomNumberBetween(83, 57), 0)));
+		super(manager, x, y);
 	}
 
+
+	@Override
+	protected Sprite initSprite() {
+		return new Sprite(new Color(Helper.getRandomNumberBetween(11, 7), Helper.getRandomNumberBetween(83, 57), 0));
+	}
+	
 	@Override
 	public void update() {
 

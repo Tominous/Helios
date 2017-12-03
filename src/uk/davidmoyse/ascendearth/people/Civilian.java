@@ -13,10 +13,10 @@ public class Civilian extends Person {
 	@Override
 	protected Sprite initSprite() {
 		int[][] pixels = new int[super.width][super.height];
-		
-		
+
+		return null;
 	}
-	
+
 	@Override
 	public void update() {
 

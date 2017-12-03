@@ -23,10 +23,10 @@ public class GameManager {
 	}
 
 	public void render() {
-		game.getWorld().renderTiles();
-
 		for (GameObject object : gameObjects) {
-			object.render();
+			if (game.getDisplay().getCamera().isInView(object)) {
+				object.render();
+			}
 		}
 	}
 
