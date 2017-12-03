@@ -1,10 +1,8 @@
 package uk.davidmoyse.ascendearth.world.tiles;
 
-import java.awt.Color;
-
 import uk.davidmoyse.ascendearth.GameManager;
 import uk.davidmoyse.ascendearth.graphics.sprites.Sprite;
-import uk.davidmoyse.ascendearth.world.util.Helper;
+import uk.davidmoyse.ascendearth.graphics.sprites.Spritesheet;
 
 public class GrassTile extends Tile {
 
@@ -15,7 +13,7 @@ public class GrassTile extends Tile {
 
 	@Override
 	protected Sprite initSprite() {
-		return new Sprite(new Color(Helper.getRandomNumberBetween(11, 7), Helper.getRandomNumberBetween(83, 57), 0));
+		return new Sprite(Spritesheet.tiles, 0);
 	}
 	
 	@Override

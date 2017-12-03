@@ -1,9 +1,8 @@
 package uk.davidmoyse.ascendearth.world.tiles;
 
-import java.awt.Color;
-
 import uk.davidmoyse.ascendearth.GameManager;
 import uk.davidmoyse.ascendearth.graphics.sprites.Sprite;
+import uk.davidmoyse.ascendearth.graphics.sprites.Spritesheet;
 
 public class StoneTile extends Tile {
 
@@ -13,7 +12,7 @@ public class StoneTile extends Tile {
 
 	@Override
 	protected Sprite initSprite() {
-		return new Sprite(Color.GRAY);
+		return new Sprite(Spritesheet.tiles, 1);
 	}
 	
 	@Override

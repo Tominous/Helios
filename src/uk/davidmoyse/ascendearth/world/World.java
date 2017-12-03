@@ -16,7 +16,7 @@ public class World {
 	 * The length of the world in tiles. The world is square. Multiply by the
 	 * tile width to get the amount of pixels the world covers.
 	 */
-	public static final int WORLD_WIDTH = 50;
+	public static final int WORLD_WIDTH = 75;
 	public static final int WORLD_HEIGHT = 40;
 
 	private int[][] pixels;
@@ -44,13 +44,9 @@ public class World {
 			}
 		}
 
-		tiles.add(new TestTile(manager, 50, 100));
-
 		for (Tile tile : tiles) {
 			manager.addGameObject(tile);
 		}
-
-		System.out.println(tiles.size() + " tiles have been created");
 	}
 
 	public int[][] getPixels() {

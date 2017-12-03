@@ -6,11 +6,13 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
+
 import uk.davidmoyse.ascendearth.world.tiles.Tile;
 
 public class Spritesheet {
 
-	public static Spritesheet characters = new Spritesheet("spritesheet");
+	public static Spritesheet tiles = new Spritesheet("tiles");
 
 	private BufferedImage spritesheet;
 	private ArrayList<int[][]> images;
@@ -33,16 +35,20 @@ public class Spritesheet {
 
 		int[][] pixels = createNewPixelsArray();
 
-		for (int i = 1; i < spritesheet.getWidth() / Tile.TILE_SIZE; i++) {
+		// Add a loop here for the height
+		for (int ix = 1; ix < spritesheet.getWidth() / Tile.TILE_SIZE; ix++) {
 			for (int x = 0; x < Tile.TILE_SIZE; x++) {
 				for (int y = 0; y < Tile.TILE_SIZE; y++) {
-					int actualX = x * i;
-					int actualY = y * i;
+					int actualIX = ix - 1;
+					int actualX = (Tile.TILE_SIZE * actualIX) + x;
+					int actualY = y;
+
+					System.out.println("x " + actualX + " y " + actualY);
 
 					int colour = spritesheet.getRGB(actualX, actualY);
-					
+
 					// Colour of transparency = -65286
-					
+
 					pixels[x][y] = colour;
 				}
 			}
@@ -50,6 +56,7 @@ public class Spritesheet {
 			images.add(pixels);
 			pixels = createNewPixelsArray();
 		}
+		System.out.println(images.size());
 	}
 
 	private int[][] createNewPixelsArray() {

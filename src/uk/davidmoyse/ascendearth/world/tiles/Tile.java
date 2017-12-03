@@ -8,7 +8,7 @@ import uk.davidmoyse.ascendearth.graphics.sprites.Sprite;
 
 public abstract class Tile extends Entity {
 
-	public static final int TILE_SIZE =32;
+	public static final int TILE_SIZE = 16;
 
 	public Tile(GameManager manager, int x, int y) {
 		super(manager, x, y, TILE_SIZE, TILE_SIZE);

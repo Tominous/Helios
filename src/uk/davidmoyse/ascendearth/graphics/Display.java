@@ -5,7 +5,6 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 import uk.davidmoyse.ascendearth.Game;
 import uk.davidmoyse.ascendearth.GameManager;
