@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 
 public class Ascendearth {
 
+	// The starting class file.
+
 	public static void main(String[] args) {
 		Game game = new Game();
 
