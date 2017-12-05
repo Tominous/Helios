@@ -34,27 +34,28 @@ public class Spritesheet {
 		int[][] pixels = createNewPixelsArray();
 
 		// Add a loop here for the height
-		for (int ix = 1; ix < spritesheet.getWidth() / Tile.TILE_SIZE; ix++) {
-			for (int x = 0; x < Tile.TILE_SIZE; x++) {
-				for (int y = 0; y < Tile.TILE_SIZE; y++) {
-					int actualIX = ix - 1;
-					int actualX = (Tile.TILE_SIZE * actualIX) + x;
-					int actualY = y;
+		for (int iy = 1; iy < spritesheet.getHeight() / Tile.TILE_SIZE; iy++) {
+			for (int ix = 1; ix < spritesheet.getWidth() / Tile.TILE_SIZE; ix++) {
+				for (int x = 0; x < Tile.TILE_SIZE; x++) {
+					for (int y = 0; y < Tile.TILE_SIZE; y++) {
+						int actualIX = ix - 1;
+						int actualIY = iy - 1;
+						int actualX = (Tile.TILE_SIZE * actualIX) + x;
+						int actualY = (Tile.TILE_SIZE * actualIY) + y;
 
-					System.out.println("x " + actualX + " y " + actualY);
+						int colour = spritesheet.getRGB(actualX, actualY);
 
-					int colour = spritesheet.getRGB(actualX, actualY);
+						// Colour of transparency = -65286
 
-					// Colour of transparency = -65286
-
-					pixels[x][y] = colour;
+						pixels[x][y] = colour;
+					}
 				}
-			}
 
-			images.add(pixels);
-			pixels = createNewPixelsArray();
+				images.add(pixels);
+				System.out.println(images.size());
+				pixels = createNewPixelsArray();
+			}
 		}
-		System.out.println(images.size());
 	}
 
 	private int[][] createNewPixelsArray() {

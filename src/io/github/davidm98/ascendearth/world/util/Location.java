@@ -1,4 +1,4 @@
-package io.github.davidm98.ascendearth.world;
+package io.github.davidm98.ascendearth.world.util;
 
 import io.github.davidm98.ascendearth.world.tiles.Tile;
 

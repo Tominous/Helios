@@ -7,8 +7,8 @@ import java.util.Random;
 import io.github.davidm98.ascendearth.GameManager;
 import io.github.davidm98.ascendearth.world.tiles.GrassTile;
 import io.github.davidm98.ascendearth.world.tiles.StoneTile;
-import io.github.davidm98.ascendearth.world.tiles.TestTile;
 import io.github.davidm98.ascendearth.world.tiles.Tile;
+import io.github.davidm98.ascendearth.world.tiles.TreeTile;
 
 public class World {
 
@@ -43,6 +43,8 @@ public class World {
 				}
 			}
 		}
+
+		tiles.add(new TreeTile(manager, 50, 100));
 
 		for (Tile tile : tiles) {
 			manager.addGameObject(tile);

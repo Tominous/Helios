@@ -1,6 +1,6 @@
 package io.github.davidm98.ascendearth;
 
-import io.github.davidm98.ascendearth.world.Location;
+import io.github.davidm98.ascendearth.world.util.Location;
 
 public abstract class GameObject {
 

@@ -5,10 +5,10 @@ import java.awt.event.KeyEvent;
 import io.github.davidm98.ascendearth.Game;
 import io.github.davidm98.ascendearth.GameManager;
 import io.github.davidm98.ascendearth.GameObject;
-import io.github.davidm98.ascendearth.world.Location;
 import io.github.davidm98.ascendearth.world.World;
 import io.github.davidm98.ascendearth.world.tiles.Tile;
 import io.github.davidm98.ascendearth.world.util.Helper;
+import io.github.davidm98.ascendearth.world.util.Location;
 
 public class Camera extends GameObject {
 

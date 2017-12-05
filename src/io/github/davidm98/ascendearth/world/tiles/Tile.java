@@ -16,15 +16,16 @@ public abstract class Tile extends Entity {
 
 	protected void paintSprite(Sprite sprite) {
 		int px = location.getX(), py = location.getY();
+		int[][] pixels = sprite.getPixels();
 
-		for (int ix = px; ix < px + TILE_SIZE; ix++) {
-			for (int iy = py; iy < py + TILE_SIZE; iy++) {
-				Color colour = new Color(sprite.getPixels()[ix - px][iy - py]);
+		for (int x = 0; x < pixels.length; x++) {
+			for (int y = 0; y < pixels[x].length; y++) {
+				Color colour = new Color(pixels[x][y]);
 
 				// Colour of transparency = -65286
 
 				if (colour.getRGB() != -65286) {
-					manager.getGame().getWorld().setColourAtCoordinates(colour, ix, iy);
+					manager.getGame().getWorld().setColourAtCoordinates(colour, px + x, py + y);
 				}
 			}
 		}
