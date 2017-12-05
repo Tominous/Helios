@@ -54,14 +54,14 @@ public class Game extends Canvas implements Runnable {
 		// Game updates 60 times per second and renders the game (at a higher
 		// rate)
 
-		this.requestFocus();
+		// Credit to TheChernoProject for demonstrating this game loop.
+		// https://www.youtube.com/user/TheChernoProject
+		int frames = 0;
 
 		long lastTime = System.nanoTime();
-		double amountOfTicks = 60.0;
-		double ns = 1_000_000_000 / amountOfTicks;
+		double ns = 1_000_000_000.0 / 60.0;
 		double delta = 0;
 		long timer = System.currentTimeMillis();
-		int frames = 0;
 
 		while (running) {
 			long now = System.nanoTime();

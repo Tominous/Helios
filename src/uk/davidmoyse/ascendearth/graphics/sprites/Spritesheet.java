@@ -6,8 +6,6 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
-
 import uk.davidmoyse.ascendearth.world.tiles.Tile;
 
 public class Spritesheet {
